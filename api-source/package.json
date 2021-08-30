@@ -45,12 +45,17 @@
     "!*/__tests__"
   ],
   "dependencies": {
+    "@loopback/authentication": "^7.3.2",
     "@loopback/boot": "^3.4.2",
     "@loopback/core": "^2.16.2",
     "@loopback/repository": "^3.7.1",
     "@loopback/rest": "^10.0.0",
     "@loopback/rest-explorer": "^3.3.2",
     "@loopback/service-proxy": "^3.2.2",
+    "@types/express-jwt": "^6.0.2",
+    "express-jwt": "^6.1.0",
+    "express-jwt-authz": "^2.4.1",
+    "jwks-rsa": "^2.0.4",
     "loopback-connector-postgresql": "^5.4.0",
     "tslib": "^2.0.0"
   },

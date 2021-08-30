@@ -6,6 +6,7 @@ import {
   response,
   ResponseObject,
 } from '@loopback/rest';
+import {authenticate} from '@loopback/authentication';
 
 /**
  * OpenAPI response for ping()
@@ -52,4 +53,13 @@ export class PingController {
       headers: Object.assign({}, this.req.headers),
     };
   }
+
+  @authenticate({strategy: 'auth0-jwt', options: {scopes: ['greet']}})
+  @get('/greet')
+  greet(): object {
+    return {
+      testMessage: 'Testing authentication.'
+    };
+  }
+
 }
