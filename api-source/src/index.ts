@@ -1,3 +1,5 @@
+import * as dotenv from 'dotenv';
+dotenv.config();
 import {ApplicationConfig, MoviesApiApplication} from './application';
 
 export * from './application';
@@ -5,6 +7,7 @@ export * from './application';
 export async function main(options: ApplicationConfig = {}) {
   const app = new MoviesApiApplication(options);
   await app.boot();
+  await app.migrateSchema();
   await app.start();
 
   const url = app.restServer.url;
