@@ -1,0 +1,19 @@
+{
+  "name": "challenge-improvein-backend-movies-api",
+  "version": "1.0.0",
+  "description": "Movies API for ImproveIn.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/helio7/challenge-improvein-backend-movies-api.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/helio7/challenge-improvein-backend-movies-api/issues"
+  },
+  "homepage": "https://github.com/helio7/challenge-improvein-backend-movies-api#readme"
+}
