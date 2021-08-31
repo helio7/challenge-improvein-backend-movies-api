@@ -54,11 +54,12 @@ Project requisites, and my solution choices:
    - UPPERCASE for constants.
    - Single Capital Letter for models.
 - The use of ESLint or other linter is optional.
-   - There's not enough time to add this to the project. Also, there's only one developer working on this, and the complexity of the application is low. So it isn't necessary either.
+   - Loopback CLI comes with the option to install ESLint. I used that option.
 - The database could be relational or NoSQL, it's up to you. The use of ORM is optional too.
-   - I'll use a relational database, with PostgreSQL. Loopback.js 4 comes with its own ORM under the hood.
+   - I'll use a relational database, with PostgreSQL. Loopback comes with its own ORM under the hood.
 - The database doesn't need to be presented. But the model should be represented in some way. It could be in the form of ORM configuration or at least a minimal documentation or example of some of the entities.
-   - Loopback generates .model files that define the models.
+   - Loopback generates .model files that define the models. I'll also include an image of the final database diagram, and a link to the DBDiagram.io project.
+   - Project link: https://dbdiagram.io/d/612e33be825b5b0146ecd10f
 
 Final model relations structure:
 - A movie
