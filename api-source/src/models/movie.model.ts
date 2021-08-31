@@ -15,6 +15,10 @@ export class Movie extends Entity {
   })
   id?: number;
 
+  @property({
+    type: 'number',
+  })
+  score?: number;
 
   constructor(data?: Partial<Movie>) {
     super(data);
