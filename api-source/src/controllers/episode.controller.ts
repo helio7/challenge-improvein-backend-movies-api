@@ -19,7 +19,9 @@ import {
 } from '@loopback/rest';
 import {Episode} from '../models';
 import {EpisodeRepository} from '../repositories';
+import {authenticate} from '@loopback/authentication';
 
+@authenticate({strategy: 'auth0-jwt'})
 export class EpisodeController {
   constructor(
     @repository(EpisodeRepository)

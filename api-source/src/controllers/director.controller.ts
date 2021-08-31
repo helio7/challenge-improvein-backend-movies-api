@@ -19,7 +19,9 @@ import {
 } from '@loopback/rest';
 import {Director} from '../models';
 import {DirectorRepository} from '../repositories';
+import {authenticate} from '@loopback/authentication';
 
+@authenticate({strategy: 'auth0-jwt'})
 export class DirectorController {
   constructor(
     @repository(DirectorRepository)

@@ -11,7 +11,9 @@ import {
   TvShow,
 } from '../models';
 import {EpisodeRepository} from '../repositories';
+import {authenticate} from '@loopback/authentication';
 
+@authenticate({strategy: 'auth0-jwt'})
 export class EpisodeTvShowController {
   constructor(
     @repository(EpisodeRepository)

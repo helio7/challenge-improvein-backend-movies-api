@@ -20,7 +20,9 @@ import {
   Movie,
 } from '../models';
 import {DirectorRepository} from '../repositories';
+import {authenticate} from '@loopback/authentication';
 
+@authenticate({strategy: 'auth0-jwt'})
 export class DirectorMovieController {
   constructor(
     @repository(DirectorRepository) protected directorRepository: DirectorRepository,

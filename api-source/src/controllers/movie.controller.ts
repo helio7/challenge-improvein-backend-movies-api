@@ -19,7 +19,9 @@ import {
 } from '@loopback/rest';
 import {Movie} from '../models';
 import {MovieRepository} from '../repositories';
+import {authenticate} from '@loopback/authentication';
 
+@authenticate({strategy: 'auth0-jwt'})
 export class MovieController {
   constructor(
     @repository(MovieRepository)

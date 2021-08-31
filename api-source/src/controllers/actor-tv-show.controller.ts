@@ -21,7 +21,9 @@ TvShowActor,
 TvShow,
 } from '../models';
 import {ActorRepository} from '../repositories';
+import {authenticate} from '@loopback/authentication';
 
+@authenticate({strategy: 'auth0-jwt'})
 export class ActorTvShowController {
   constructor(
     @repository(ActorRepository) protected actorRepository: ActorRepository,

@@ -11,7 +11,9 @@ import {
   Director,
 } from '../models';
 import {MovieRepository} from '../repositories';
+import {authenticate} from '@loopback/authentication';
 
+@authenticate({strategy: 'auth0-jwt'})
 export class MovieDirectorController {
   constructor(
     @repository(MovieRepository)

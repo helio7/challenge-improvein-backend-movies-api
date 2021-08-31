@@ -21,7 +21,9 @@ MovieActor,
 Movie,
 } from '../models';
 import {ActorRepository} from '../repositories';
+import {authenticate} from '@loopback/authentication';
 
+@authenticate({strategy: 'auth0-jwt'})
 export class ActorMovieController {
   constructor(
     @repository(ActorRepository) protected actorRepository: ActorRepository,

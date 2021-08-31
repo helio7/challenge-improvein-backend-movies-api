@@ -19,7 +19,9 @@ import {
 } from '@loopback/rest';
 import {TvShow} from '../models';
 import {TvShowRepository} from '../repositories';
+import {authenticate} from '@loopback/authentication';
 
+@authenticate({strategy: 'auth0-jwt'})
 export class TvShowController {
   constructor(
     @repository(TvShowRepository)
