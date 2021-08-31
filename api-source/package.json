@@ -54,6 +54,7 @@
     "@loopback/service-proxy": "^3.2.2",
     "@types/express-jwt": "^6.0.2",
     "@types/node-fetch": "^2.5.12",
+    "dotenv": "^10.0.0",
     "express-jwt": "^6.1.0",
     "express-jwt-authz": "^2.4.1",
     "jwks-rsa": "^2.0.4",
