@@ -6,9 +6,9 @@ Project requisites, and my solution choices:
 - Functionality.
 - Endpoints for authentication using JWT.
    - All the endpoints that deliver the data will require a Bearer token sent in the request.
-   - There'll be a '/login' endpoint that will receive credentials, and will send back a temporal access token, and a refresh token.
+   - There'll be a POST '/get-access-token' endpoint that will receive credentials, and will send back a temporal access token, and a refresh token.
 - Also an endpoint for refreshing the JWT access token.
-   - There'll be a '/refresh' endpoint that will receive an access token and a refresh token. If both of them are valid, the access token life will be extended.
+   - There'll be a POST '/refresh-access-token' endpoint that will receive an access token and a refresh token. If both of them are valid, the access token life will be extended.
 - Endpoint for retrieving movies. It should be allowed to filter and sort by some field.
    - There'll be a '/movies' endpoint that will allow the user to get movies.Filtering and/or sorting them by some property of the Movie model.
 - Endpoint for retrieving the information (director included) of a specific episode of a TV Show.
