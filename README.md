@@ -17,11 +17,11 @@ Project requisites, and my solution choices:
 - Endpoint for retrieving the information (director included) of a specific episode of a TV Show.
    - There'll be a GET '/tv-shows/{tv-show-id}/episodes' endpoint that will return information about the episodes of a TV show.
    - A filter can be applied to the GET request, to only get the information about an episode with an specific ID:
-   http://localhost:3000/tv-shows/1/episodes?filter={"where":{"id":1}}
+   GET {baseURL}/tv-shows/1/episodes?filter={"where":{"id":1}}
    - And the filter can also tell the server to retrieve information about the episode's director:
-   http://localhost:3000/tv-shows/1/episodes?filter={"where":{"id":1},"include":["director"]}
+   GET {baseURL}/tv-shows/1/episodes?filter={"where":{"id":1},"include":["director"]}
 - Endpoint for adding a new object (it could be for any entity you like).
-   - '/movies' will allow you to add movies using POST requests.
+   - GET /movies will allow you to add movies using POST requests.
 
 - Model.
 - Entities to consider:
