@@ -10,7 +10,10 @@ Project requisites, and my solution choices:
 - Also an endpoint for refreshing the JWT access token.
    - There'll be a POST '/refresh-access-token' endpoint that will receive an access token and a refresh token. If both of them are valid, the access token life will be extended.
 - Endpoint for retrieving movies. It should be allowed to filter and sort by some field.
-   - There'll be a '/movies' endpoint that will allow the user to get movies.Filtering and/or sorting them by some property of the Movie model.
+   - Get all movies with score = 3:
+   GET {baseURL}/movies?filter={"where":{"score":3}}
+   - Get all movies, sorted in descending order:
+   GET {baseURL}/movies?filter={"order":"score DESC"}
 - Endpoint for retrieving the information (director included) of a specific episode of a TV Show.
    - There'll be a '/tv-shows/:showId/:episodeId' that will return information about the episode.
 - Endpoint for adding a new object (it could be for any entity you like).
