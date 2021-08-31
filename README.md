@@ -15,28 +15,30 @@ Project requisites, and my solution choices:
    - Get all movies, sorted in descending order:
    GET {baseURL}/movies?filter={"order":"score DESC"}
 - Endpoint for retrieving the information (director included) of a specific episode of a TV Show.
-   - There'll be a '/tv-shows/:showId/:episodeId' that will return information about the episode.
+   - There'll be a GET '/tv-shows/{tv-show-id}/episodes' endpoint that will return information about the episodes of a TV show.
+   - A filter can be applied to the GET request, to only get the information about an episode with an specific ID:
+   http://localhost:3000/tv-shows/1/episodes?filter={"where":{"id":1}}
+   - And the filter can also tell the server to retrieve information about the episode's director:
+   http://localhost:3000/tv-shows/1/episodes?filter={"where":{"id":1},"include":["director"]}
 - Endpoint for adding a new object (it could be for any entity you like).
    - '/movies' will allow you to add movies using POST requests.
 
 - Model.
 - Entities to consider:
 - Movie. Has many actors, but one director.
-   - Movie has many actors.
-   - Movie has one director.
+   - Movie belongs to one director.
+   - Movie has and belongs to many actors.
 - TV Show. Has many actors, but one director. It also has seasons and episodes inside each of one.
-   - Tv show has many actors.
-   - Tv show has one director.
-   - Tv show has many seasons.
-   - Season has many episodes.
-- Actor. Can be on different movies and tv shows.
-   - Actor belongs to many movies.
-   - Actor belongs to many shows.
-- Director. Can direct many movies and specific episodes of tv shows.
-   - Director belongs to many movies.
-   - Director belongs to many shows.
-   - Director belongs to many episodes.
-   - Belongs to many movies and/or many episodes.
+   - Tv show has many episodes.
+   - Tv show belongs to one director.
+   - Tv show has and belongs to many actors.
+- Actor. Can be on different movies and TV shows.
+   - Actor has and belongs to many movies.
+   - Actor has and belongs to many TV shows.
+- Director. Can direct many movies and specific episodes of TV shows.
+   - Director has many movies.
+   - Director has many TV shows.
+   - Director has many episodes.
 
 - Tech Requirements.
 - The code should be using Node.js 12 or superior.
@@ -57,3 +59,24 @@ Project requisites, and my solution choices:
    - I'll use a relational database, with PostgreSQL. Loopback.js 4 comes with its own ORM under the hood.
 - The database doesn't need to be presented. But the model should be represented in some way. It could be in the form of ORM configuration or at least a minimal documentation or example of some of the entities.
    - Loopback generates .model files that define the models.
+
+Final model relations structure:
+- A movie
+      - Belongs to one director.
+      - Has and belongs to many actors.
+- A TV show
+      - Has many episodes.
+      - Belongs to one director.
+      - Has and belongs many actors.
+- An episode
+      - Belongs to a TV show.
+      - Belongs to one director.
+      - Has and belongs to many actors.
+- A director
+      - Has many movies.
+      - Has many TV shows.
+      - Has many episodes.
+- An actor
+      - Has and belongs to many movies.
+      - Has and belongs to many TV shows.
+      - Has and belongs to many episodes.
