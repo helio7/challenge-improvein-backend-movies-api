@@ -12,7 +12,7 @@ Project requisites, and my solution choices:
 - Endpoint for retrieving movies. It should be allowed to filter and sort by some field.
    - Get all movies with score = 3:
    GET {baseURL}/movies?filter={"where":{"score":3}}
-   - Get all movies, sorted in descending order:
+   - Get all movies, sorted by score in descending order:
    GET {baseURL}/movies?filter={"order":"score DESC"}
 - Endpoint for retrieving the information (director included) of a specific episode of a TV Show.
    - There'll be a GET '/tv-shows/{tv-show-id}/episodes' endpoint that will return information about the episodes of a TV show.
